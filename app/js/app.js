@@ -11,7 +11,7 @@ triviaApp.config(['$routeProvider', function($routeProvider) {
 				controller: 'QuestionNewCtrl'
 			}).
 			when('/questions/:questionId', {
-				templateUrl: 'partials/question-detail.html',
+				templateUrl: 'partials/question-new.html',
 				controller: 'QuestionDetailCtrl'
 			}).
 			otherwise({
@@ -31,7 +31,7 @@ triviaApp.controller('QuestionListCtrl', ['$scope', '$firebase', function($scope
 triviaApp.controller('QuestionNewCtrl', ['$scope', '$firebase', '$location', function($scope, $firebase, $location) {
 	$scope.question = {};
 
-	$scope.addQuestion = function(question) {
+	$scope.persistQuestion = function(question) {
 		var firebaseUrl = "https://torid-fire-8241.firebaseio.com/questions";
 		$scope.questions = $firebase(new Firebase(firebaseUrl));
 		$scope.questions.$add(question).then(function(ref) {
@@ -40,8 +40,14 @@ triviaApp.controller('QuestionNewCtrl', ['$scope', '$firebase', '$location', fun
 	};
 }]);
 
-triviaApp.controller('QuestionDetailCtrl', ['$scope', '$firebase', '$routeParams', function($scope, $firebase, $routeParams) {
+triviaApp.controller('QuestionDetailCtrl', ['$scope', '$firebase', '$routeParams', '$location', function($scope, $firebase, $routeParams, $location) {
 	var firebaseUrl = "https://torid-fire-8241.firebaseio.com/questions/" + $routeParams.questionId;
 	$scope.question = $firebase(new Firebase(firebaseUrl));
+
+	$scope.persistQuestion = function(question) {
+		$scope.question.$update({question: question.question, answer: question.answer}).then(function(ref) {
+			$location.url('/questions');
+		});
+	};
 }]);
 
