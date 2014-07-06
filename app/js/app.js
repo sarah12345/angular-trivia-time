@@ -1,7 +1,7 @@
 var triviaTimeApp = angular.module('triviaTimeApp', []);
 
-triviaTimeApp.controller('GameController', ['$scope', '$http', function($scope, $http) {
-	$http.get('data/games.json').success(function(data) {
-		$scope.games = data;
+triviaTimeApp.controller('TriviaController', ['$scope', '$http', function($scope, $http) {
+	$http.get('data/questions.json').success(function(data) {
+		$scope.questions = data;
 	});
 }]);

@@ -14,12 +14,11 @@
 		<h1>Trivia Time!</h1>
 		<p>Challenge your knowledge and impress your friends with this set of fun trivia games.</p>
 
-		<h3>Games Available:</h3>
-		<div ng-controller="GameController">
-		<ul ng-repeat="game in games" class="list-group">
+		<div ng-controller="TriviaController">
+		<ul ng-repeat="question in questions" class="list-group">
 			<li class="list-group-item">
-				<strong>{{game.name}}</strong>
-				<span class="pull-right">Fun Factor: {{game.rating}}</span>
+				<strong>{{question.question}}</strong>
+				<span class="pull-right">Difficulting: {{question.rating}}</span>
 			</li>
 		</ul>
 		</div>

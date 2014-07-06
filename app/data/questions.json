@@ -1,0 +1,20 @@
+[
+	{
+		"question": "What is the reason for AngularJS's name?",
+		"rating": 3,
+		"answer": "HTML has angular brackets.",
+		"hint": "Look at the code."
+	},
+	{
+		"question": "Why is the namespace used for AngularJS ng?",
+		"rating": 4,
+		"answer": "ng sounds like angular.",
+		"hint": "Say it out loud."
+	},
+	{
+		"question": "What does MVW stand for?",
+		"rating": 4,
+		"answer": "Model view whatever.",
+		"hint": "There are several variations of MVC, MVVM, etc."
+	}
+]
