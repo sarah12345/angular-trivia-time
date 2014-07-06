@@ -9,10 +9,11 @@
 
 <h1>Trivia Time!</h1>
 
-Enter Your Name: <input type="text" ng-model="userName"/>
-<h3>Welcome {{userName}}!</h3>
-
-
-
+<h3>Quizzes Available:</h3>
+<div ng-controller="QuizController">
+<ul ng-repeat="quiz in quizzes">
+	<li><b>{{quiz.name}}</b> Fun Factor: {{quiz.rating}}</li>
+</ul>
+</div>
 </body>
 </html>
