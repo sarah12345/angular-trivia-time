@@ -7,3 +7,10 @@
 .container a {
 	color: darkorange;
 }
+
+.ng-dirty.ng-valid {
+	border-color: limegreen;
+}
+.ng-dirty.ng-invalid {
+	border-color: red;
+}

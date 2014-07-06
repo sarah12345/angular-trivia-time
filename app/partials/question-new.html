@@ -1,12 +1,12 @@
 <div>
-	<form class="form-horizontal" role="search" novalidate ng-submit="addQuestion(question)">
+	<form name="questionForm" class="form-horizontal" role="search" novalidate ng-submit="questionForm.$valid && addQuestion(question)">
 		<div class="form-group">
-			<label class="control-label">Question:</label>
-			<input type="text" class="form-control" ng-model="question.question">
+			<label class="control-label">Question:</label> (required)
+			<input type="text" class="form-control" ng-model="question.question" required>
 		</div>
 		<div class="form-group">
-			<label class="control-label">Answer:</label>
-			<input type="text" class="form-control" ng-model="question.answer">
+			<label class="control-label">Answer:</label> (required)
+			<input type="text" class="form-control" ng-model="question.answer" required>
 		</div>
 		<div class="form-group">
 			<button type="submit" value="add question" class="btn btn-primary">
