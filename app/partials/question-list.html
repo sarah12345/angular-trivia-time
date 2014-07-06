@@ -6,7 +6,10 @@
 	<ul ng-repeat="(key, question) in questions" class="list-group">
 		<li class="list-group-item">
 			<h3><small>{{question.question}}</small></h3>
-			<a href="#/questions/{{key}}" class="pull-right">Edit</a>
+			<div class="pull-right">
+				<a href="#/questions/{{key}}">Edit</a> |
+				<a ng-click="deleteQuestion(key)">Delete</a>
+			</div>
 			<a ng-click="toggleAnswer(question)">
 				<span class="glyphicon" ng-class="{'glyphicon-plus-sign':!question.showAnswer, 'glyphicon-minus-sign':question.showAnswer}"></span>
 				ANSWER

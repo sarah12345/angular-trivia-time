@@ -7,6 +7,10 @@ triviaControllers.controller('QuestionListCtrl', ['$scope', '$firebase', functio
 	$scope.toggleAnswer = function(question) {
 		question.showAnswer = !question.showAnswer;
 	}
+
+	$scope.deleteQuestion = function(questionId) {
+		$scope.questions.$remove(questionId);
+	}
 }]);
 
 triviaControllers.controller('QuestionNewCtrl', ['$scope', '$firebase', '$location', function($scope, $firebase, $location) {
