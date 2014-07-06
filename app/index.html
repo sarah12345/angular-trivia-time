@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="triviaTimeApp">
+<html lang="en" ng-app="triviaApp">
 <head>
 	<title>Trivia Time</title>
 	<script type="text/javascript" src="js/angular.min.js"></script>
@@ -14,7 +14,7 @@
 		<h1>Trivia Time!</h1>
 		<p class="application-description">Challenge your knowledge and impress your friends with this fun trivia game.</p>
 
-		<div ng-controller="TriviaController">
+		<div ng-controller="QuestionListCtrl">
 		<ul ng-repeat="question in questions" class="list-group">
 			<li class="list-group-item">
 					<h3><small>{{question.question}}</small></h3>
