@@ -6,6 +6,10 @@ triviaApp.config(['$routeProvider', function($routeProvider) {
 				templateUrl: 'partials/question-list.html',
 				controller: 'QuestionListCtrl'
 			}).
+			when('/questions/:questionId', {
+				templateUrl: 'partials/question-detail.html',
+				controller: 'QuestionDetailCtrl'
+			}).
 			otherwise({
 				redirectTo: '/questions'
 			});
@@ -18,5 +22,10 @@ triviaApp.controller('QuestionListCtrl', ['$scope', '$firebase', function($scope
 	$scope.toggleAnswer = function(question) {
 		question.showAnswer = !question.showAnswer;
 	}
+}]);
+
+triviaApp.controller('QuestionDetailCtrl', ['$scope', '$firebase', '$routeParams', function($scope, $firebase, $routeParams) {
+	var firebaseUrl = "https://torid-fire-8241.firebaseio.com/questions/" + $routeParams.questionId;
+	$scope.question = $firebase(new Firebase(firebaseUrl));
 }]);
 
