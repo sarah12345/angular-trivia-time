@@ -4,16 +4,26 @@
 	<title>Trivia Time</title>
 	<script type="text/javascript" src="js/angular.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link type="text/css" rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
 
-<h1>Trivia Time!</h1>
+<div class="container">
+	<div class="jumbotron">
+		<h1>Trivia Time!</h1>
+		<p>Challenge your knowledge and impress your friends with this set of fun trivia games.</p>
 
-<h3>Quizzes Available:</h3>
-<div ng-controller="QuizController">
-<ul ng-repeat="quiz in quizzes">
-	<li><b>{{quiz.name}}</b> Fun Factor: {{quiz.rating}}</li>
-</ul>
+		<h3>Games Available:</h3>
+		<div ng-controller="GameController">
+		<ul ng-repeat="game in games" class="list-group">
+			<li class="list-group-item">
+				<strong>{{game.name}}</strong>
+				<span class="pull-right">Fun Factor: {{game.rating}}</span>
+			</li>
+		</ul>
+		</div>
+	</div>
 </div>
 </body>
 </html>

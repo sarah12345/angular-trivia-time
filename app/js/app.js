@@ -1,7 +1,7 @@
 var triviaTimeApp = angular.module('triviaTimeApp', []);
 
-triviaTimeApp.controller('QuizController', function($scope) {
-	$scope.quizzes = [
+triviaTimeApp.controller('GameController', function($scope) {
+	$scope.games = [
 		{
 			name: 'Riddle Challenge',
 			rating: 3,
