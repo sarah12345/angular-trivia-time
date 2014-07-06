@@ -4,4 +4,7 @@ triviaTimeApp.controller('TriviaController', ['$scope', '$http', function($scope
 	$http.get('data/questions.json').success(function(data) {
 		$scope.questions = data;
 	});
+	$scope.toggleAnswer = function(question) {
+		question.showAnswer = !question.showAnswer;
+	}
 }]);

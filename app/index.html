@@ -12,13 +12,17 @@
 <div class="container">
 	<div class="jumbotron">
 		<h1>Trivia Time!</h1>
-		<p>Challenge your knowledge and impress your friends with this set of fun trivia games.</p>
+		<p class="application-description">Challenge your knowledge and impress your friends with this fun trivia game.</p>
 
 		<div ng-controller="TriviaController">
 		<ul ng-repeat="question in questions" class="list-group">
 			<li class="list-group-item">
-				<strong>{{question.question}}</strong>
-				<span class="pull-right">Difficulting: {{question.rating}}</span>
+					<h3><small>{{question.question}}</small></h3>
+					<a ng-click="toggleAnswer(question)">
+						<span class="glyphicon" ng-class="{'glyphicon-plus':!question.showAnswer, 'glyphicon-minus':question.showAnswer}"></span>
+						ANSWER
+					</a>
+					<span ng-show="question.showAnswer"><em>{{question.answer}}</em></span>
 			</li>
 		</ul>
 		</div>
