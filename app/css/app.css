@@ -11,7 +11,8 @@
 	color: darkorange;
 }
 .new-question {
-	padding: 0 10px 15px 0;
+	padding: 0 10px 15px 10px;
+	color: slategray;
 }
 
 .ng-dirty.ng-valid {

@@ -5,16 +5,26 @@ triviaControllers.controller('QuestionListCtrl', ['$scope', 'FirebaseService', f
 
 	$scope.toggleAnswer = function(question) {
 		question.showAnswer = !question.showAnswer;
-	}
+	};
 
 	$scope.answerQuestion = function(question, correct) {
 		question.answered = true;
 		question.correct = correct;
-	}
+	};
+
+	$scope.totalQuestions = function() {
+		var questionElements = document.querySelectorAll('i.fa-smile-o');
+		return questionElements.length;
+	};
+
+	$scope.correctAnswers = function() {
+		var questionElements = document.querySelectorAll('i.fa-smile-o.active');
+		return questionElements.length;
+	};
 
 	$scope.deleteQuestion = function(questionId) {
 		$scope.questions.$remove(questionId);
-	}
+	};
 }]);
 
 triviaControllers.controller('QuestionNewCtrl', ['$scope', '$location', 'FirebaseService', function($scope, $location, FirebaseService) {
