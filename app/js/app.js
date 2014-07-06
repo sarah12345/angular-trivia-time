@@ -1,16 +1,7 @@
 var triviaTimeApp = angular.module('triviaTimeApp', []);
 
-triviaTimeApp.controller('GameController', function($scope) {
-	$scope.games = [
-		{
-			name: 'Riddle Challenge',
-			rating: 3,
-			questions: []
-		},
-		{
-			name: 'AngularJS Concepts',
-			rating: 4,
-			questions: []
-		}
-	]
-});
+triviaTimeApp.controller('GameController', ['$scope', '$http', function($scope, $http) {
+	$http.get('data/games.json').success(function(data) {
+		$scope.games = data;
+	});
+}]);
