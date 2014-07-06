@@ -3,6 +3,7 @@
 <head>
 	<title>Trivia Time</title>
 	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-route.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 	<link type="text/css" rel="stylesheet" href="css/app.css"/>
@@ -14,18 +15,7 @@
 		<h1>Trivia Time!</h1>
 		<p class="application-description">Challenge your knowledge and impress your friends with this fun trivia game.</p>
 
-		<div ng-controller="QuestionListCtrl">
-		<ul ng-repeat="question in questions" class="list-group">
-			<li class="list-group-item">
-					<h3><small>{{question.question}}</small></h3>
-					<a ng-click="toggleAnswer(question)">
-						<span class="glyphicon" ng-class="{'glyphicon-plus':!question.showAnswer, 'glyphicon-minus':question.showAnswer}"></span>
-						ANSWER
-					</a>
-					<span ng-show="question.showAnswer"><em>{{question.answer}}</em></span>
-			</li>
-		</ul>
-		</div>
+		<div ng-view></div>
 	</div>
 </div>
 </body>
