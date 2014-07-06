@@ -1,0 +1,19 @@
+<div>
+	<form class="form-horizontal" role="search" novalidate ng-submit="addQuestion(question)">
+		<div class="form-group">
+			<label class="control-label">Question:</label>
+			<input type="text" class="form-control" ng-model="question.question">
+		</div>
+		<div class="form-group">
+			<label class="control-label">Answer:</label>
+			<input type="text" class="form-control" ng-model="question.answer">
+		</div>
+		<div class="form-group">
+			<button type="submit" value="add question" class="btn btn-primary">
+				<span class="glyphicon glyphicon-star"></span> Add Question
+			</button>
+		</div>
+	</form>
+
+	<a href="#/questions" class="pull-right">Back to all questions</a>
+</div>
