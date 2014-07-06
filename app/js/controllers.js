@@ -1,8 +1,7 @@
-var triviaControllers = angular.module('triviaControllers', []);
+var triviaControllers = angular.module('triviaControllers', ['triviaServices']);
 
-triviaControllers.controller('QuestionListCtrl', ['$scope', '$firebase', function($scope, $firebase) {
-	var firebaseUrl = "https://torid-fire-8241.firebaseio.com/questions";
-	$scope.questions = $firebase(new Firebase(firebaseUrl));
+triviaControllers.controller('QuestionListCtrl', ['$scope', 'FirebaseService', function($scope, FirebaseService) {
+	$scope.questions = FirebaseService.getQuestions();
 
 	$scope.toggleAnswer = function(question) {
 		question.showAnswer = !question.showAnswer;
@@ -13,21 +12,19 @@ triviaControllers.controller('QuestionListCtrl', ['$scope', '$firebase', functio
 	}
 }]);
 
-triviaControllers.controller('QuestionNewCtrl', ['$scope', '$firebase', '$location', function($scope, $firebase, $location) {
+triviaControllers.controller('QuestionNewCtrl', ['$scope', '$location', 'FirebaseService', function($scope, $location, FirebaseService) {
 	$scope.question = {};
 
 	$scope.persistQuestion = function(question) {
-		var firebaseUrl = "https://torid-fire-8241.firebaseio.com/questions";
-		$scope.questions = $firebase(new Firebase(firebaseUrl));
+		$scope.questions = FirebaseService.getQuestions();
 		$scope.questions.$add(question).then(function(ref) {
 			$location.url('/questions');
 		});
 	};
 }]);
 
-triviaControllers.controller('QuestionDetailCtrl', ['$scope', '$firebase', '$routeParams', '$location', function($scope, $firebase, $routeParams, $location) {
-	var firebaseUrl = "https://torid-fire-8241.firebaseio.com/questions/" + $routeParams.questionId;
-	$scope.question = $firebase(new Firebase(firebaseUrl));
+triviaControllers.controller('QuestionDetailCtrl', ['$scope', '$routeParams', '$location', 'FirebaseService', function($scope, $routeParams, $location, FirebaseService) {
+	$scope.question = FirebaseService.getQuestion($routeParams.questionId);
 
 	$scope.persistQuestion = function(question) {
 		$scope.question.$update({question: question.question, answer: question.answer}).then(function(ref) {
@@ -35,3 +32,4 @@ triviaControllers.controller('QuestionDetailCtrl', ['$scope', '$firebase', '$rou
 		});
 	};
 }]);
+
