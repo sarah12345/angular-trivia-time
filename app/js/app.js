@@ -1,4 +1,4 @@
-var triviaApp = angular.module('triviaApp', ['ngRoute']);
+var triviaApp = angular.module('triviaApp', ['ngRoute','firebase']);
 
 triviaApp.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.
@@ -11,10 +11,10 @@ triviaApp.config(['$routeProvider', function($routeProvider) {
 			});
 	}]);
 
-triviaApp.controller('QuestionListCtrl', ['$scope', '$http', function($scope, $http) {
-	$http.get('data/questions.json').success(function(data) {
-		$scope.questions = data;
-	});
+triviaApp.controller('QuestionListCtrl', ['$scope', '$firebase', function($scope, $firebase) {
+	var firebaseUrl = "https://torid-fire-8241.firebaseio.com/questions";
+	$scope.questions = $firebase(new Firebase(firebaseUrl));
+
 	$scope.toggleAnswer = function(question) {
 		question.showAnswer = !question.showAnswer;
 	}
