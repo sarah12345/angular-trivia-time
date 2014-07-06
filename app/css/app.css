@@ -14,3 +14,14 @@
 .ng-dirty.ng-invalid {
 	border-color: red;
 }
+i {
+	color: slategray;
+}
+
+
+i.fa-smile-o.active, i.fa-smile-o:hover {
+	color: limegreen;
+}
+i.fa-frown-o.active, i.fa-frown-o:hover {
+	color: red;
+}

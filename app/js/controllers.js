@@ -7,6 +7,11 @@ triviaControllers.controller('QuestionListCtrl', ['$scope', 'FirebaseService', f
 		question.showAnswer = !question.showAnswer;
 	}
 
+	$scope.answerQuestion = function(question, correct) {
+		question.answered = true;
+		question.correct = correct;
+	}
+
 	$scope.deleteQuestion = function(questionId) {
 		$scope.questions.$remove(questionId);
 	}
