@@ -5,8 +5,18 @@
 			<input type="text" class="form-control" ng-model="question.question" required>
 		</div>
 		<div class="form-group">
-			<label class="control-label">Answer:</label> (required)
-			<input type="text" class="form-control" ng-model="question.answer" required>
+			<label class="control-label">Answer Option 1:</label> (required)
+			<input type="text" class="form-control" ng-model="question.option1" required>
+			<label class="control-label">Answer Option 2:</label> (required)
+			<input type="text" class="form-control" ng-model="question.option2" required>
+			<label class="control-label">Answer Option 3:</label> (required)
+			<input type="text" class="form-control" ng-model="question.option3" required>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Correct Answer:</label> (required)<br/>
+			<input type="radio" ng-model="question.answer" value="1" required> 1
+			<input type="radio" ng-model="question.answer" value="2" required> 2
+			<input type="radio" ng-model="question.answer" value="3" required> 3
 		</div>
 		<div class="form-group">
 			<button type="submit" class="btn btn-primary">

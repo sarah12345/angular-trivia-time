@@ -7,24 +7,23 @@
 	<ul ng-repeat="(key, question) in questions" class="list-group">
 		<li class="list-group-item">
 
-			<div class="pull-right text-right">
+			<div class="pull-right">
+			<div>
 				<a ng-click="answerQuestion(question, true)"><i class="fa fa-smile-o fa-3x" ng-class="{active:question.answered && question.correct}"></i></a>
 				<a ng-click="answerQuestion(question, false)"><i class="fa fa-frown-o fa-3x" ng-class="{active:question.answered && !question.correct}"></i></a>
 			</div>
-
-			<h3 class="clearfix"><small>{{question.question}}</small></h3>
-
 			<div class="pull-right">
 				<a href="#/questions/{{key}}">Edit</a> |
 				<a ng-click="deleteQuestion(key)">Delete</a>
 			</div>
+			</div>
 
-			<a ng-click="toggleAnswer(question)">
-				<span class="glyphicon" ng-class="{'glyphicon-plus-sign':!question.showAnswer, 'glyphicon-minus-sign':question.showAnswer}"></span>
-				ANSWER
-			</a>
-			<span ng-show="question.showAnswer"><em>{{question.answer}}</em></span>
-
+			<div>
+				<h4>{{question.question}}</h4>
+				<div class="text-muted"><input type="radio" name="answer" value="1" /> {{question.option1}}</div>
+				<div class="text-muted"><input type="radio" name="answer" value="2" /> {{question.option2}}</div>
+				<div class="text-muted"><input type="radio" name="answer" value="3" /> {{question.option2}}</div>
+			</div>
 		</li>
 	</ul>
 </div>
