@@ -7,15 +7,14 @@
 	<ul ng-repeat="(key, question) in questions" class="list-group">
 		<li class="list-group-item">
 
-			<div class="pull-right">
-				<div>
-					<i class="fa fa-smile-o fa-3x" ng-class="{active:question.answered && question.correct}"></i>
-					<i class="fa fa-frown-o fa-3x" ng-class="{active:question.answered && !question.correct}"></i>
-				</div>
-				<div class="pull-right">
-					<a href="#/questions/{{key}}">Edit</a> |
-					<a ng-click="deleteQuestion(key)">Delete</a>
-				</div>
+			<div class="top-right">
+				<i class="fa fa-smile-o fa-3x" ng-class="{active:question.answered && question.correct}"></i>
+				<i class="fa fa-frown-o fa-3x" ng-class="{active:question.answered && !question.correct}"></i>
+			</div>
+
+			<div class="bottom-right">
+				<a href="#/questions/{{key}}">Edit</a> |
+				<a ng-click="deleteQuestion(key)">Delete</a>
 			</div>
 
 			<div>
