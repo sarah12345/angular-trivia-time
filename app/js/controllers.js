@@ -3,9 +3,9 @@ var triviaControllers = angular.module('triviaControllers', ['triviaServices']);
 triviaControllers.controller('QuestionListCtrl', ['$scope', 'FirebaseService', function($scope, FirebaseService) {
 	$scope.questions = FirebaseService.getQuestions();
 
-	$scope.answerQuestion = function(question, correct) {
+	$scope.answerQuestion = function(question, selectedAnswer) {
 		question.answered = true;
-		question.correct = correct;
+		question.correct = question.answer === selectedAnswer;
 	};
 
 	$scope.totalQuestions = function() {
@@ -43,6 +43,7 @@ triviaControllers.controller('QuestionDetailCtrl', ['$scope', '$routeParams', '$
 			option1: question.option1,
 			option2: question.option2,
 			option3: question.option3,
+			option4: question.option4,
 			answer: question.answer
 		}).then(function(ref) {
 			$location.url('/questions');
