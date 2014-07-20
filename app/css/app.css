@@ -1,8 +1,8 @@
 .container h1 {
 	color: darkslateblue;
 }
-.container h3 {
-	margin-top: 5px;
+.container h4 {
+	color: darkorange;
 }
 .container p {
 	padding-bottom: 20px;
@@ -28,7 +28,7 @@ input[type="radio"] {
 
 i {
 	color: slategray;
-	margin: 25px 0 5px 0;
+	margin: 15px 0 40px 0;
 }
 i.fa-smile-o.active, i.fa-smile-o:hover {
 	color: limegreen;
