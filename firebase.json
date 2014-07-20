@@ -1,5 +1,5 @@
 {
-  "firebase": "wdiy-trivia",
+  "firebase": "wdiy-trivia-time",
   "public": "app",
   "ignore": [
     "firebase.json",
