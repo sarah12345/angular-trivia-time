@@ -58,5 +58,5 @@ i.fa-frown-o.active, i.fa-frown-o:hover {
 }
 .animate.ng-leave {
 	-webkit-animation: fadeOutRight 1s;
-	animation: fadeInRight 1s;
+	animation: fadeOutRight 1s;
 }
