@@ -1,11 +1,13 @@
 <div>
 	<div class="clearfix new-question">
+		Filter questions by text: <input type="text" ng-model="filterText" /><br/>
 		You've answered {{correctAnswers()}} out of {{totalQuestions()}} correctly so far.
 		<a class="pull-right" href="#/questions/new"><span class="glyphicon glyphicon-plus"></span> Add new question</a>
 	</div>
 
-	<ul ng-repeat="(key, question) in questions" class="list-group">
-		<li class="list-group-item">
+
+	<ul class="list-group">
+		<li class="list-group-item animate" ng-repeat="(key, question) in questions | orderByPriority | filter:filterText">
 
 			<div class="top-right">
 				<i class="fa fa-smile-o fa-3x" ng-class="{active:question.answered && question.correct}"></i>
@@ -26,4 +28,6 @@
 			</div>
 		</li>
 	</ul>
+
 </div>
+

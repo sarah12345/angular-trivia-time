@@ -1,4 +1,4 @@
-var triviaControllers = angular.module('triviaControllers', ['triviaServices']);
+var triviaControllers = angular.module('triviaControllers', ['triviaServices','ngAnimate']);
 
 triviaControllers.controller('QuestionListCtrl', ['$scope', 'FirebaseService', function($scope, FirebaseService) {
 	$scope.questions = FirebaseService.getQuestions();
