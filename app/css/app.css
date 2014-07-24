@@ -1,4 +1,5 @@
 .container h1 {
+	display: inline-block;
 	color: darkslateblue;
 }
 .container h4 {
@@ -52,6 +53,11 @@ i.fa-frown-o.active, i.fa-frown-o:hover {
 	color: red;
 }
 
+
+h1:hover {
+	-webkit-animation: tada 1s;
+	animation: tada 1s;
+}
 .animate.ng-enter {
 	-webkit-animation: fadeInRight 1s;
 	animation: fadeInRight 1s;
