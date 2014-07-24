@@ -48,9 +48,13 @@ i {
 }
 i.fa-smile-o.active, i.fa-smile-o:hover {
 	color: limegreen;
+	-webkit-animation: bounce 1s;
+	animation: bounce 1s;
 }
 i.fa-frown-o.active, i.fa-frown-o:hover {
 	color: red;
+	-webkit-animation: bounce 1s;
+	animation: bounce 1s;
 }
 
 
