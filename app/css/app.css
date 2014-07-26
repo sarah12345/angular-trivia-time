@@ -1,6 +1,6 @@
 .container h1 {
 	display: inline-block;
-	color: darkslateblue;
+	color: #debb27;
 }
 .container h4 {
 	color: darkorange;
@@ -16,7 +16,6 @@
 }
 .new-question {
 	padding: 0 10px 15px 10px;
-	color: slategray;
 }
 .top-right {
 	position: absolute;
@@ -32,10 +31,10 @@
 }
 
 .ng-dirty.ng-valid {
-	border-color: limegreen;
+	border-color: #48ca3b;
 }
 .ng-dirty.ng-invalid {
-	border-color: red;
+	border-color: #4d3a7d;
 }
 input[type="radio"] {
 	margin: 0px 5px 0px 10px;
@@ -43,16 +42,15 @@ input[type="radio"] {
 
 
 i {
-	color: slategray;
 	margin: 15px 0 40px 0;
 }
 i.fa-smile-o.active, i.fa-smile-o:hover {
-	color: limegreen;
+	color: #48ca3b;
 	-webkit-animation: bounce 1s;
 	animation: bounce 1s;
 }
 i.fa-frown-o.active, i.fa-frown-o:hover {
-	color: red;
+	color: #4d3a7d;
 	-webkit-animation: bounce 1s;
 	animation: bounce 1s;
 }
